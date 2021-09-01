@@ -1,0 +1,24 @@
+.header__hamburger-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/hamburger-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .2s linear;
+  visibility: hidden;
+}
+
+.header__hamburger-icon:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.header__hamburger-menu:checked~.header__hamburger-icon {
+  background-image: url(../../../images/close-icon.svg);
+}
+
+@media screen and (max-width: 499px) {
+  .header__hamburger-icon {
+    visibility: visible;
+  }
+}

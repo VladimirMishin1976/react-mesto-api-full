@@ -1,0 +1,17 @@
+.profile__aratar-pointer {
+  border-radius: 50%;
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
+  transition: all .3s linear;
+}
+
+.profile__aratar-pointer:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../../../images/profile__avatar-point.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}

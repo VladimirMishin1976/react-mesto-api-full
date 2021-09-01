@@ -1,0 +1,10 @@
+.header__auth-link_type_gray {
+  color: #A9A9A9;
+}
+
+@media screen and (max-width: 500px) {
+  .header__auth-link_type_gray {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

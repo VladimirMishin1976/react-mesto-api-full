@@ -1,0 +1,19 @@
+.form__link {
+  display: block;
+  margin-top: 15px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.form__link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: .6;
+  text-decoration: none;
+}

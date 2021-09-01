@@ -1,0 +1,14 @@
+.header__container_hamburger {
+  padding: 40px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .header__container_hamburger {
+    display: flex;
+  }
+}

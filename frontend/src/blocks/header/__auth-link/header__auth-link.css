@@ -1,0 +1,25 @@
+.header__auth-link {
+  display: block;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: .15s linear;
+  text-decoration: none;
+}
+
+.header__auth-link:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 500px) {
+  .header__auth-link {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 5px;
+  }
+}

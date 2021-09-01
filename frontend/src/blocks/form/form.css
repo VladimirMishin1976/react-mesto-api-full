@@ -1,0 +1,14 @@
+.form {
+  margin: auto;
+  padding-top: 60px;
+  background-color: inherit;
+  max-width: 358px;
+  width: calc(100% - 60px);
+}
+
+@media screen and (max-width: 660px) {
+  .form {
+    padding-top: 42px;
+    padding-bottom: 40px;
+  }
+}
