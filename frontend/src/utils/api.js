@@ -15,9 +15,8 @@ class Api {
   getUserInfo() { //1. Загрузка информации о пользователе с сервера
     return fetch(`${this._address}/users/me`,
       {
-        credentials: 'include',
         headers: {
-          // authorization: this._token
+          authorization: this._token
         }
       }).then(this._checkResponse);
   }
@@ -26,8 +25,8 @@ class Api {
     return fetch(`${this._address}/users/me`,
       {
         method: 'PATCH',
-        credentials: 'include',
         headers: {
+          authorization: this._token,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -41,8 +40,8 @@ class Api {
   getInitialCards() { //2. Загрузка карточек с сервера
     return fetch(`${this._address}/cards`,
       {
-        credentials: 'include',
         headers: {
+          authorization: this._token,
         }
       }).then(this._checkResponse);
   }
@@ -51,8 +50,8 @@ class Api {
     return fetch(`${this._address}/cards`,
       {
         method: 'POST',
-        credentials: 'include',
         headers: {
+          authorization: this._token,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -66,8 +65,8 @@ class Api {
     return fetch(`${this._address}/cards/${cardId}`,
       {
         method: 'DELETE',
-        credentials: 'include',
         headers: {
+          authorization: this._token,
         },
       }).then(this._checkResponse);
   }
@@ -83,18 +82,16 @@ class Api {
       return fetch(`${this._address}/cards/likes/${cardId}`,
         {
           method: 'Delete',
-          credentials: 'include',
           headers: {
-
+            authorization: this._token,
           }
         }).then(this._checkResponse);
     } else {
       return fetch(`${this._address}/cards/likes/${cardId}`,
         {
           method: 'PUT',
-          credentials: 'include',
           headers: {
-
+            authorization: this._token,
           }
         }).then(this._checkResponse);
     }
@@ -105,9 +102,8 @@ class Api {
     return fetch(`${this._address}/users/me/avatar`,
       {
         method: "PATCH",
-        credentials: 'include',
         headers: {
-
+          authorization: this._token,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
