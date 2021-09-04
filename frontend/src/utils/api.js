@@ -41,7 +41,7 @@ class Api {
     return fetch(`${this._address}/cards`,
       {
         headers: {
-          a'Authorization': `Bearer ${this._token}`,
+          'Authorization': `Bearer ${this._token}`,
         }
       }).then(this._checkResponse);
   }
