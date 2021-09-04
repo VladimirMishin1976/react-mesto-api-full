@@ -1,7 +1,7 @@
 class Api {
-  constructor({ address, token}) {
+  constructor({ address}) {
     this._address = address;
-    this._token = token;
+    // this._token = token;
   }
 
   //  проверка ответа
@@ -17,7 +17,7 @@ class Api {
       {
         credentials: "include",
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
         }
       }).then(this._checkResponse);
   }
@@ -28,7 +28,7 @@ class Api {
         credentials: "include",
         method: 'PATCH',
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -44,7 +44,7 @@ class Api {
       {
         credentials: "include",
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
         }
       }).then(this._checkResponse);
   }
@@ -55,7 +55,7 @@ class Api {
         credentials: "include",
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -71,7 +71,7 @@ class Api {
         credentials: "include",
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
         },
       }).then(this._checkResponse);
   }
@@ -89,7 +89,7 @@ class Api {
           credentials: "include",
           method: 'Delete',
           headers: {
-            'Authorization': `Bearer ${this._token}`,
+            // 'Authorization': `Bearer ${this._token}`,
           }
         }).then(this._checkResponse);
     } else {
@@ -98,7 +98,7 @@ class Api {
           credentials: "include",
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${this._token}`,
+            // 'Authorization': `Bearer ${this._token}`,
           }
         }).then(this._checkResponse);
     }
@@ -111,7 +111,7 @@ class Api {
         credentials: "include",
         method: "PATCH",
         headers: {
-          'Authorization': `Bearer ${this._token}`,
+          // 'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -123,7 +123,7 @@ class Api {
 
 const api = new Api({
   address: 'http://api.mesto15.student.nomoredomains.club',
-  token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
+  // token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
 });
 
 export default api;
