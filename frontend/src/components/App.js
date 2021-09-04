@@ -148,21 +148,21 @@ function App() {
   }
 
   function handleCheckToken() {
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    auth.checkToken()
-      .then(res => {
-        const { _id, email } = res.data;
-        setUserData({ _id, email });
-        setLoggedIn(true);
-        history.push('/');
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    // } else {
-    //   setLoggedIn(false);
-    // }
+    const token = localStorage.getItem('token');
+    if (token) {
+      auth.checkToken(token)
+        .then(res => {
+          const { _id, email } = res.data;
+          setUserData({ _id, email });
+          setLoggedIn(true);
+          history.push('/');
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    } else {
+      setLoggedIn(false);
+    }
   }
 
   function handleLogOut() {
