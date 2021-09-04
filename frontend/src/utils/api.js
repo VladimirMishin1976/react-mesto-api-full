@@ -114,7 +114,7 @@ class Api {
 }
 
 const api = new Api({
-  address: 'https://api.mesto15.student.nomoredomains.club',
+  address: 'http://api.mesto15.student.nomoredomains.club',
   token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
 });
 
