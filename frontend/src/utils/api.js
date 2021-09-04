@@ -15,6 +15,7 @@ class Api {
   getUserInfo() { //1. Загрузка информации о пользователе с сервера
     return fetch(`${this._address}/users/me`,
       {
+        credentials: "include",
         headers: {
           'Authorization': `Bearer ${this._token}`,
         }
@@ -24,6 +25,7 @@ class Api {
   setUserInfo({ name, about }) { //3. Редактирование профиля
     return fetch(`${this._address}/users/me`,
       {
+        credentials: "include",
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -40,6 +42,7 @@ class Api {
   getInitialCards() { //2. Загрузка карточек с сервера
     return fetch(`${this._address}/cards`,
       {
+        credentials: "include",
         headers: {
           'Authorization': `Bearer ${this._token}`,
         }
@@ -49,6 +52,7 @@ class Api {
   addCard({ name, link }) {  //4. Добавление новой карточки
     return fetch(`${this._address}/cards`,
       {
+        credentials: "include",
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -64,6 +68,7 @@ class Api {
   removeCard(cardId) {  // 7. Удаление карточки
     return fetch(`${this._address}/cards/${cardId}`,
       {
+        credentials: "include",
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -81,6 +86,7 @@ class Api {
     if (isLiked) {
       return fetch(`${this._address}/cards/likes/${cardId}`,
         {
+          credentials: "include",
           method: 'Delete',
           headers: {
             'Authorization': `Bearer ${this._token}`,
@@ -89,6 +95,7 @@ class Api {
     } else {
       return fetch(`${this._address}/cards/likes/${cardId}`,
         {
+          credentials: "include",
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${this._token}`,
@@ -100,7 +107,8 @@ class Api {
   // 9. Обновление аватара пользователя
   editAvatarPhoto({ avatar }) {
     return fetch(`${this._address}/users/me/avatar`,
-      {
+      { 
+        credentials: "include",
         method: "PATCH",
         headers: {
           'Authorization': `Bearer ${this._token}`,
