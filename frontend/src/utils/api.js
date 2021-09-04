@@ -1,7 +1,7 @@
 class Api {
-  constructor({ address }) {
+  constructor({ address, token}) {
     this._address = address;
-    // this._token = token;
+    this._token = token;
   }
 
   //  проверка ответа
@@ -16,7 +16,7 @@ class Api {
     return fetch(`${this._address}/users/me`,
       {
         headers: {
-          authorization: this._token
+          'Authorization': `Bearer ${this._token}`,
         }
       }).then(this._checkResponse);
   }
@@ -26,7 +26,7 @@ class Api {
       {
         method: 'PATCH',
         headers: {
-          authorization: this._token,
+          'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -41,7 +41,7 @@ class Api {
     return fetch(`${this._address}/cards`,
       {
         headers: {
-          authorization: this._token,
+          a'Authorization': `Bearer ${this._token}`,
         }
       }).then(this._checkResponse);
   }
@@ -51,7 +51,7 @@ class Api {
       {
         method: 'POST',
         headers: {
-          authorization: this._token,
+          'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -66,7 +66,7 @@ class Api {
       {
         method: 'DELETE',
         headers: {
-          authorization: this._token,
+          'Authorization': `Bearer ${this._token}`,
         },
       }).then(this._checkResponse);
   }
@@ -83,7 +83,7 @@ class Api {
         {
           method: 'Delete',
           headers: {
-            authorization: this._token,
+            'Authorization': `Bearer ${this._token}`,
           }
         }).then(this._checkResponse);
     } else {
@@ -91,7 +91,7 @@ class Api {
         {
           method: 'PUT',
           headers: {
-            authorization: this._token,
+            'Authorization': `Bearer ${this._token}`,
           }
         }).then(this._checkResponse);
     }
@@ -103,7 +103,7 @@ class Api {
       {
         method: "PATCH",
         headers: {
-          authorization: this._token,
+          'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -115,7 +115,7 @@ class Api {
 
 const api = new Api({
   address: 'http://api.mesto15.student.nomoredomains.club',
-  // token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
+  token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
 });
 
 export default api;
