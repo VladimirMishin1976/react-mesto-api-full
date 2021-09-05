@@ -43,7 +43,6 @@ function App() {
     Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([cardsData, userData]) => {
         setCards(cardsData);
-        console.log(userData)//---------------------------------------------------------
         setCurrentUser(userData);
       }).catch(err => console.error(err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
