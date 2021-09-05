@@ -1,5 +1,6 @@
 # react-mesto-api-full
 ## Учебный проект "Место" фронтенд + бэкенд
 
-### Ссылка https://mesto15.student.nomoredomains.club 
-### IP 84.201.178.224
+### Ссылка на сервер https://api.mesto15.student.nomoredomains.club 
+### IP сервера 84.201.178.224
+### Ссылка на сайт https://mesto15.student.nomoredomains.club
