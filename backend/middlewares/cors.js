@@ -1,5 +1,8 @@
 /* eslint-disable linebreak-style */
-const allowedCorse = ['http://mesto15.student.nomoredomains.club', 'https://mesto15.student.nomoredomains.club'];
+const allowedCorse = ['http://mesto15.student.nomoredomains.club',
+  'https://mesto15.student.nomoredomains.club',
+  'http://localhost:3000'];
+
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {

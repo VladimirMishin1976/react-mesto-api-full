@@ -1,5 +1,7 @@
+import { BASE_URL_BACKEND } from '../constants.js';
+
 class Api {
-  constructor({ address}) {
+  constructor({ address }) {
     this._address = address;
     // this._token = token;
   }
@@ -84,7 +86,7 @@ class Api {
   // 8. Постановка и снятие лайка
   changeLikeCardStatus(cardId, isLiked) {
     if (isLiked) {
-      return fetch(`${this._address}/cards/likes/${cardId}`,
+      return fetch(`${this._address}/cards/${cardId}/likes`,
         {
           credentials: "include",
           method: 'Delete',
@@ -93,7 +95,7 @@ class Api {
           }
         }).then(this._checkResponse);
     } else {
-      return fetch(`${this._address}/cards/likes/${cardId}`,
+      return fetch(`${this._address}/cards/${cardId}/likes`,
         {
           credentials: "include",
           method: 'PUT',
@@ -107,7 +109,7 @@ class Api {
   // 9. Обновление аватара пользователя
   editAvatarPhoto({ avatar }) {
     return fetch(`${this._address}/users/me/avatar`,
-      { 
+      {
         credentials: "include",
         method: "PATCH",
         headers: {
@@ -122,7 +124,7 @@ class Api {
 }
 
 const api = new Api({
-  address: 'http://api.mesto15.student.nomoredomains.club',
+  address: BASE_URL_BACKEND,
   // token: '1ffa7dc3-7c04-464d-a554-c3e498742c2a'
 });
 

@@ -47,6 +47,7 @@ module.exports = {
         if (!user) {
           throw new NotFoundError(`Пользователь с id=${req.params._id} не найден`);
         }
+        console.log(user);
         return res.send(user);
       })
       .catch(next);
@@ -118,7 +119,7 @@ module.exports = {
         useFindAndModify: false,
       },
     )
-      .then((user) => res.send({ data: user }))
+      .then((user) => res.send(user))
       .catch((error) => {
         if (error.name === 'ValidationError' || error.name === 'CastError') {
           throw new ValidationError(error.message);
@@ -140,7 +141,7 @@ module.exports = {
         useFindAndModify: false,
       },
     )
-      .then((user) => res.send({ data: user }))
+      .then((user) => res.send(user))
       .catch((error) => {
         if (error.name === 'ValidationError' || error.name === 'CastError') {
           throw new ValidationError(error.message);

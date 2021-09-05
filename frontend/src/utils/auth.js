@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mesto15.student.nomoredomains.club';
+import { BASE_URL_BACKEND } from '../constants.js';
 
 //  проверка ответа
 const checkResponse = (res) => {
@@ -8,7 +8,7 @@ const checkResponse = (res) => {
 }
 
 export const register = (password, email) => {
-  return fetch(`${BASE_URL}/signup`, {
+  return fetch(`${BASE_URL_BACKEND}/signup`, {
     credentials: "include",
     method: 'POST',
     headers: {
@@ -20,7 +20,7 @@ export const register = (password, email) => {
 }
 
 export const authorize = (password, email) => {
-  return fetch(`${BASE_URL}/signin`, {
+  return fetch(`${BASE_URL_BACKEND}/signin`, {
     credentials: "include",
     method: 'POST',
     headers: {
@@ -32,7 +32,7 @@ export const authorize = (password, email) => {
 }
 
 export const checkToken = () => {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${BASE_URL_BACKEND}/users/me`, {
     credentials: "include",
     method: 'GET',
     headers: {

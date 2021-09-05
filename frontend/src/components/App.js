@@ -43,13 +43,16 @@ function App() {
     Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([cardsData, userData]) => {
         setCards(cardsData);
+        console.log(userData)//---------------------------------------------------------
         setCurrentUser(userData);
       }).catch(err => console.error(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id)
+
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.changeLikeCardStatus(card._id, isLiked)
       .then(newCard => {
@@ -144,6 +147,8 @@ function App() {
       })
       .catch(err => {
         console.log(err);
+        setIsInfoTooltipPopupData({ image: imgUnSuccessSign, text: err + ' Пароль или email неверен' });
+        setIsInfoTooltipPopupOpen(true);
       })
   }
 
@@ -152,7 +157,7 @@ function App() {
     if (token) {
       auth.checkToken(token)
         .then(res => {
-          const { _id, email } = res.data;
+          const { _id, email } = res;
           setUserData({ _id, email });
           setLoggedIn(true);
           history.push('/');

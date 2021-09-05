@@ -7,14 +7,14 @@ const ServerError = require('../errors/server-err');
 module.exports = {
   getCards(req, res, next) {
     Card.find({})
-      .then((cards) => res.send({ data: cards }))
+      .then((cards) => res.send(cards))
       .catch(next);
   },
 
   createCard(req, res, next) {
     const { name, link } = req.body;
     Card.create({ name, link, owner: req.user._id })
-      .then((card) => res.status(201).send({ data: card }))
+      .then((card) => res.status(201).send(card))
       .catch((error) => {
         if (error.name === 'ValidationError') {
           throw new ValidationError(error.message);
@@ -73,7 +73,7 @@ module.exports = {
         if (!card) {
           throw new NotFoundError('Карточка не найдена');
         }
-        return res.send({ data: card });
+        return res.send(card);
       })
       .catch((err) => {
         if (err.name === 'CastError') {
