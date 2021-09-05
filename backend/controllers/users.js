@@ -47,7 +47,6 @@ module.exports = {
         if (!user) {
           throw new NotFoundError(`Пользователь с id=${req.params._id} не найден`);
         }
-        console.log(user);
         return res.send(user);
       })
       .catch(next);
@@ -74,10 +73,6 @@ module.exports = {
     const {
       name, about, avatar, email, password,
     } = req.body;
-
-    if (!email || !password) {
-      throw new ValidationError('Email или пароль не могут быть пустыми');
-    }
 
     User.findOne({ email })
       .then((userData) => {

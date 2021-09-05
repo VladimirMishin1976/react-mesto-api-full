@@ -12,6 +12,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: (string) => /^https?:\/\/.+#?/.test(string),
+      message: 'Не очень то похоже на ссылку',
     },
   },
   owner: {
