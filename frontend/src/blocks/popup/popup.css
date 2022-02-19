@@ -6,9 +6,9 @@
   height: 100vh;
   top: 0;
   left: 0;
-  align-items: center;
-  justify-content: center;
   display: flex;
+  align-items: center;
+  justify-content: center; 
   visibility: hidden;
   opacity: 0;
   transition: .15s linear;

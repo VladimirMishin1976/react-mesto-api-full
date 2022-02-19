@@ -66,8 +66,6 @@ async function start() {
   });
 }
 
-app.use(errorLogger);
-
 app.use(errors());
 
 app.use((err, req, res, next) => {
@@ -84,6 +82,8 @@ app.use((err, req, res, next) => {
     });
   next();
 });
+
+app.use(errorLogger);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
