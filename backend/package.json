@@ -13,23 +13,23 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-autofix": "^1.0.5",
-    "eslint-plugin-import": "^2.24.2",
-    "nodemon": "^2.0.12"
+    "eslint-plugin-autofix": "^1.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "celebrate": "^15.0.0",
-    "cookie-parser": "^1.4.5",
+    "body-parser": "^1.19.2",
+    "celebrate": "^15.0.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-winston": "^4.2.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.8",
-    "validator": "^13.6.0",
-    "winston": "^3.3.3"
+    "mongoose": "^5.13.14",
+    "validator": "^13.7.0",
+    "winston": "^3.6.0"
   },
   "repository": {
     "type": "git",
